@@ -1,0 +1,8 @@
+{
+  "name": "Gnome Trash Indicator",
+  "description": "A minimal Trash manager for the gnome shell",
+  "uuid": "gnome_trash_indicator@Dieg0Js.github.io",
+  "shell-version": [
+    "43"
+  ]
+}
