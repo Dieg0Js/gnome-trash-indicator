@@ -21,3 +21,6 @@ It hides completely when the Trash is empty, and listen for changes in trash dir
 # Manual Installation
 Clone the repository to ~/.local/share/gnome-shell/extensions/ and restart the
 shell.
+
+Fork of Gnome Trash from Axel von Bertoldi
+ * https://gitlab.com/bertoldia/gnome-shell-trash-extension
