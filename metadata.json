@@ -2,6 +2,9 @@
   "name": "Gnome Trash Indicator",
   "description": "A minimal Trash manager for the gnome shell",
   "uuid": "gnome-trash-indicator@Dieg0Js.github.io",
+  "original-authors": "Dieg0Js",
+  "url": "https://github.com/Dieg0Js/gnome-downloads-indicator",
+  "version": 1,
   "shell-version": [
     "43"
   ]
