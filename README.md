@@ -1,4 +1,4 @@
-Gnome Trash Indicator
+Trash Indicator
 ===========================
 
 A minimalist Trash management extension for the Gnome Shell.
