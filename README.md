@@ -19,8 +19,7 @@ It hides completely when the Trash is empty, and listen for changes in trash dir
 /home/username/.local/share/Trash
 
 # Manual Installation
-Clone the repository to ~/.local/share/gnome-shell/extensions/gnome-trash-indicator@Dieg0Js.github.io and restart the
-shell:
+Clone the repository to ~/.local/share/gnome-shell/extensions/ and restart the shell:
 
     * git clone https://github.com/Dieg0Js/gnome-trash-indicator.git ~/.local/share/gnome-shell/extensions/gnome-trash-indicator@Dieg0Js.github.io
 
