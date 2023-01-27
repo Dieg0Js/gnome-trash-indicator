@@ -5,13 +5,10 @@ A minimalist Trash management extension for the Gnome Shell.
 
 It allows you to:
 
-    * EMPTY the trash (Empty Button)
-    
-    * OPEN the trash folder (Open Button)
-    
-    * RESTORE items from trash (Click on item)
-    
-    * DELETE item from trash (X button)
+- EMPTY the trash (Empty Button)
+- OPEN the trash folder (Open Button)
+- RESTORE items from trash (Click on item)
+- DELETE item from trash (X button)
     
 
 It hides completely when the Trash is empty, and listen for changes in trash directory.
