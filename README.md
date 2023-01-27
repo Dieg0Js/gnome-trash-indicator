@@ -15,6 +15,10 @@ It hides completely when the Trash is empty, and listen for changes in trash dir
 
 /home/username/.local/share/Trash
 
+# Classic Installation
+Install the extensino from the official gnome extension page:
+- https://extensions.gnome.org/extension/5715/trash-indicator/
+
 # Manual Installation
 Clone the repository to ~/.local/share/gnome-shell/extensions/ and restart the shell:
 
