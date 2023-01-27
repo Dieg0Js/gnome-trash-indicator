@@ -378,15 +378,12 @@ const TrashMenu = GObject.registerClass(
      if (trashedFile.query_exists(null)) {
 
        //move file using gio lib - not working (?)
-       //trashedFile.move(destDir, Gio.FileCopyFlags.OVERWRITE, null, null);
+       let _isRestored = trashedFile.move(_originalFile, Gio.FileCopyFlags.OVERWRITE, null, null);
 
-       //copy file/folder using th cp command
-       let [result, pid, stdin, stdout, stderr] =
-       GLib.spawn_command_line_sync("cp -r '" + trashedFile.get_path() + "' '" + this.restore_path + "'");
-
-       //delete actual file and trashinfo after restoring
-       if (result && stdin != null ) {
-         this._doDeleteSingleTrashFile.bind(this);
+       //delete trashinfo after restoring
+       if (_isRestored) {
+        let _trashinfo_file = Gio.File.new_for_path(this.trash_info_files_folder.get_path() + "/" + this.file_name + ".trashinfo");
+        _trashinfo_file.delete(null);
        }
 
        //open parent folder in file manager wher restoring a file
