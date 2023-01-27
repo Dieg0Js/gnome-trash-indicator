@@ -31,7 +31,7 @@ const PopupMenu = imports.ui.popupMenu;
 const PanelMenu = imports.ui.panelMenu;
 const ModalDialog = imports.ui.modalDialog;
 const Clutter = imports.gi.Clutter;
-const Gettext = imports.gettext.domain("gnome_trash_indicator");
+const Gettext = imports.gettext.domain("trash_indicator");
 const _ = Gettext.gettext;
 const { St, GObject, Gio, GLib } = imports.gi;
 const ByteArray = imports.byteArray;
@@ -456,7 +456,7 @@ const TrashMenu = GObject.registerClass(
      });
 
 function init(extensionMeta) {
-  ExtensionUtils.initTranslations("gnome_trash_indicator");
+  ExtensionUtils.initTranslations("trash_indicator");
 }
 
 let _indicator;
