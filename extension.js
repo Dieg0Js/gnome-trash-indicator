@@ -377,7 +377,7 @@ const TrashMenu = GObject.registerClass(
      // Move file to destination directory
      if (trashedFile.query_exists(null)) {
 
-       //move file using gio lib - not working (?)
+       //restore file to original path
        let _isRestored = trashedFile.move(_originalFile, Gio.FileCopyFlags.NONE, null, null);
 
        //delete trashinfo after restoring
