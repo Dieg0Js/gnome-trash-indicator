@@ -329,7 +329,7 @@ const TrashMenu = GObject.registerClass(
           null,
           file_info.get_symbolic_icon(),
           () => {
-            this._onRestoreTrashFile(file_name, restore_path, delete_date);
+            this._onRestoreTrashFile(restore_path, delete_date);
           },
           () => {
             this._onDeleteSingleTrashFile(file_name);
@@ -347,8 +347,8 @@ const TrashMenu = GObject.registerClass(
     }
 
     _onRestoreTrashFile(file_name, restore_path, delete_date) {
-     this.file_name = file_name;
-     this.restore_path = restore_path.substring(1, restore_path.lastIndexOf("/") + 1);
+     this.file_name = restore_path.split("/").pop();
+     this.restore_path = restore_path.slice(0, restore_path.lastIndexOf("/") + 1);
      //fate is stored in .trashinfo file, read in this._listFilesInTrash() fn.
      //date format is MM-DD-YYYYThh:mm:ss
      let formatted_date = delete_date.split('T');
@@ -378,7 +378,7 @@ const TrashMenu = GObject.registerClass(
      if (trashedFile.query_exists(null)) {
 
        //move file using gio lib - not working (?)
-       let _isRestored = trashedFile.move(_originalFile, Gio.FileCopyFlags.OVERWRITE, null, null);
+       let _isRestored = trashedFile.move(_originalFile, Gio.FileCopyFlags.NONE, null, null);
 
        //delete trashinfo after restoring
        if (_isRestored) {
