@@ -1,5 +1,5 @@
 /*
- * By @Dieg0Js - 2023
+ * @Dieg0Js - 2023
  * https://github.com/Dieg0Js/gnome-trash-indicator
  *
  * Fork of Gnome Trash from Axel von Bertoldi
