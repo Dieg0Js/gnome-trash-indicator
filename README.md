@@ -1,5 +1,6 @@
-Trash Indicator
-===========================
+# Trash Indicator
+
+![screenshot_5715](https://user-images.githubusercontent.com/30718505/227161148-a5e4bca0-4356-41c9-a1ea-7c3873884c61.png)
 
 A minimalist Trash management extension for the Gnome Shell.
 
