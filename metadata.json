@@ -6,6 +6,10 @@
   "url": "https://github.com/Dieg0Js/gnome-trash-indicator",
   "version": 1,
   "shell-version": [
-    "40,41,42,43,44"
+    "40",
+    "41",
+    "42",
+    "43",
+    "44"
   ]
 }
