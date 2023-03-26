@@ -79,7 +79,7 @@ class ActionBar extends PopupMenu.PopupBaseMenuItem {
       this._openBtn = new PopupMenu.PopupBaseMenuItem({
         style_class: 'action-bar-btn'
     });
-    // let openDirecoryIcon = new St.Icon({
+    // let openDirectoryIcon = new St.Icon({
     //     icon_name: "folder-open-symbolic",
     //     style_class: 'popup-menu-icon',
     // });
@@ -255,9 +255,6 @@ const TrashMenu = GObject.registerClass(
      }
     }
 
-
-
-
     _deleteFileFromPath(filePath) {
      //delete a file or a directory and its content recursively 
      // return true in case of success
@@ -299,7 +296,7 @@ const TrashMenu = GObject.registerClass(
            //delete folder after deleting all children
            return file.delete(null);
        } else {
-           //delete file directly <is not a directory>
+           //delete file directly if is not a directory>
            return file.delete(null);
        }
    }
@@ -325,11 +322,11 @@ const TrashMenu = GObject.registerClass(
                let restore_path = lines[1].split('=')[1];
                let delete_date = lines[2].split('=')[1];
                
-        let item = new TrashMenuItem(file_info.get_display_name(),
+        let item = new TrashMenuItem(file_name,
           null,
           file_info.get_symbolic_icon(),
           () => {
-            this._onRestoreTrashFile(restore_path, delete_date);
+            this._onRestoreTrashFile(file_name,restore_path, delete_date);
           },
           () => {
             this._onDeleteSingleTrashFile(file_name);
@@ -347,7 +344,7 @@ const TrashMenu = GObject.registerClass(
     }
 
     _onRestoreTrashFile(file_name, restore_path, delete_date) {
-     this.file_name = restore_path.split("/").pop();
+    this.file_name = file_name;
      this.restore_path = restore_path.slice(0, restore_path.lastIndexOf("/") + 1);
      //fate is stored in .trashinfo file, read in this._listFilesInTrash() fn.
      //date format is MM-DD-YYYYThh:mm:ss
