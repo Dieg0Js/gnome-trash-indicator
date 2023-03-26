@@ -326,7 +326,7 @@ const TrashMenu = GObject.registerClass(
           null,
           file_info.get_symbolic_icon(),
           () => {
-            this._onRestoreTrashFile(file_name,restore_path, delete_date);
+            this._onRestoreTrashFile(restore_path, delete_date);
           },
           () => {
             this._onDeleteSingleTrashFile(file_name);
@@ -343,15 +343,15 @@ const TrashMenu = GObject.registerClass(
       this.filesList.removeAll();
     }
 
-    _onRestoreTrashFile(file_name, restore_path, delete_date) {
-    this.file_name = file_name;
+    _onRestoreTrashFile( restore_path, delete_date) {
+    this.file_name = restore_path.split('/').pop();
      this.restore_path = restore_path.slice(0, restore_path.lastIndexOf("/") + 1);
      //fate is stored in .trashinfo file, read in this._listFilesInTrash() fn.
      //date format is MM-DD-YYYYThh:mm:ss
      let formatted_date = delete_date.split('T');
 
      new InteractiveDialog(
-     "Restore " + file_name + "?",
+     "Restore " + this.file_name + "?",
      "Restore to: " + this.restore_path + "\n\nDeleted on: " + formatted_date[0] + " at " + formatted_date[1],
      this._doRestoreTrashFile.bind(this)
      ).open();
